@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin — Family Treats</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Admin Panel</h1>
+    <nav>
+      <a href="index.html">Store</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="admin-auth">
+      <h2>Sign In</h2>
+      <div id="auth-section">
+        <label>Email <input type="email" id="admin-email" placeholder="admin@example.com" /></label>
+        <label>Password <input type="password" id="admin-password" placeholder="••••••••" /></label>
+        <button id="login-btn">Log In</button>
+        <p id="auth-msg" class="muted"></p>
+      </div>
+      <div id="signout-section" class="hidden">
+        <p class="muted">Signed in as <span id="whoami"></span></p>
+        <button id="logout-btn" class="secondary">Sign Out</button>
+      </div>
+    </section>
+
+    <section id="manager" class="hidden">
+      <h2>Menu Manager</h2>
+
+      <form id="item-form" class="card">
+        <input type="hidden" id="item-id" />
+        <label>Item Name <input id="item-name" required placeholder="e.g., 12 Tamales" /></label>
+        <label>Price (USD) <input id="item-price" type="number" min="0" step="0.01" required placeholder="e.g., 25.00" /></label>
+        <label>Description (optional) <input id="item-desc" placeholder="Short description" /></label>
+        <button type="submit">Save Item</button>
+        <button type="button" id="reset-form" class="secondary">Reset</button>
+      </form>
+
+      <div class="card">
+        <h3>Existing Items</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Name</th><th>Price</th><th>Description</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="items-table"></tbody>
+        </table>
+      </div>
+
+      <div class="card" style="margin-top:16px;">
+        <h3>Orders (most recent first)</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Placed</th><th>Customer</th><th>Email</th><th>Total</th><th>Receipt</th></tr>
+          </thead>
+          <tbody id="orders-table"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> Family Treats</small>
+  </footer>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
