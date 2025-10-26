@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Family Treats — Order Online</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- PayPal SDK (replace YOUR_PAYPAL_CLIENT_ID) -->
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Family Treats</h1>
+    <nav>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="menu">
+      <h2>Menu</h2>
+      <div id="menu-list" class="menu-list"></div>
+    </section>
+
+    <aside class="cart">
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <label>
+          Name
+          <input id="cust-name" type="text" placeholder="Your name" />
+        </label>
+        <label>
+          Email
+          <input id="cust-email" type="email" placeholder="you@example.com" />
+        </label>
+        <label>
+          Notes (pickup, delivery, allergies)
+          <textarea id="cust-notes" rows="3" placeholder="e.g., pickup Saturday 10am"></textarea>
+        </label>
+        <div class="total-row">
+          <span>Total:</span> <strong id="cart-total">$0.00</strong>
+        </div>
+        <div id="paypal-button-container"></div>
+        <button id="clear-cart" class="secondary">Clear Cart</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> Family Treats</small>
+  </footer>
+
+  <!-- App (Firebase & logic) -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
