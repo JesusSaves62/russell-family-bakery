@@ -1,0 +1,36 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Node / Firebase
+node_modules/
+functions/node_modules/
+firebase-debug.log
+firebase-debug.*
+.npm/
+npm-debug.log*
+
+# Env & runtime secrets (DO NOT COMMIT)
+.env
+functions/.env
+functions/.runtimeconfig.json
+
+# Build artifacts (future-proof)
+dist/
+build/
+.cache/
+
+# Editors
+.vscode/
+.idea/
+*.code-workspace
+
+# Temp / tests
+test/
+tmp/
+backup/
+*.local.json
