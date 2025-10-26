@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Receipt — Family Treats</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Thank you!</h1>
+    <nav><a href="index.html">Back to Store</a></nav>
+  </header>
+
+  <main class="container" style="grid-template-columns:1fr;">
+    <section class="card">
+      <h2>Order Receipt</h2>
+      <p class="muted">Order ID: <span id="order-id">Loading…</span></p>
+
+      <div id="cust" class="card" style="margin-top:12px;">
+        <h3>Customer</h3>
+        <div><strong id="cust-name">—</strong></div>
+        <div id="cust-email" class="muted">—</div>
+        <div id="cust-notes" class="muted">—</div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3>Items</h3>
+        <table class="table">
+          <thead><tr><th>Item</th><th>Qty</th><th>Price</th><th>Subtotal</th></tr></thead>
+          <tbody id="lines"></tbody>
+          <tfoot>
+            <tr><th colspan="3" style="text-align:right;">Total</th>
+              <th id="grand">$0.00</th></tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div style="margin-top:12px;">
+        <button onclick="window.print()">Print Receipt</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> Family Treats</small>
+  </footer>
+
+  <script type="module" src="receipt.js"></script>
+</body>
+</html>
